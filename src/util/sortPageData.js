@@ -26,9 +26,9 @@ const sortPageData = (sortOrder, pageData) => {
   } else if (sortOrder === "Comment Count") {
     pageData.sort((a, b) => {
       if (a.comments < b.comments) {
-        return -1;
-      } else {
         return 1;
+      } else {
+        return -1;
       }
     })
   }

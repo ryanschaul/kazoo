@@ -1,4 +1,5 @@
-import './App.css';
+import './normalize.css';
+import './style.css';
 import { useState, useEffect } from 'react';
 import Controls from './components/Controls';
 import Page from './components/Page';
@@ -12,7 +13,7 @@ function App() {
   const [totalPages, setTotalPages] = useState(0);
   const [pageData, setPageData] = useState([]);
   const [sortOrder, setSortOrder] = useState('Select a sort order'); // This the correct default state?
-  const [issuesFilter, setIssuesFilter] = useState('Show All Issues');
+  const [issuesFilter, setIssuesFilter] = useState('All Issues');
 
   useEffect(() => {
     const getIssues = async () => {
@@ -42,13 +43,24 @@ function App() {
   sortPageData(sortOrder, pageData);
 
   return (
-    <>
-      <h1>Rails Repository Issues</h1>
-      <Pagination totalPages={totalPages} setPageNumber={setPageNumber} />
+    <div className='wrapper'>
+      <h1>Rails Repository Issues On GitHub</h1>
+      <Pagination 
+        totalPages={totalPages} 
+        setPageNumber={setPageNumber} 
+        currentPageNumber={pageNumber} 
+      />
       <Controls setSortOrder={setSortOrder} setIssuesFilter={setIssuesFilter}/>
-      <Page pageData={issuesFilter === 'Show All Issues' ? pageData : pageData.filter(page => page.labels.length > 0)} />
-      <Pagination totalPages={totalPages} />
-    </>
+      <Page 
+        pageData={issuesFilter === 'All Issues' ? pageData : pageData.filter(page => page.labels.length > 0)} 
+        sortOrder={sortOrder}
+      />
+      <Pagination
+        totalPages={totalPages} 
+        setPageNumber={setPageNumber} 
+        currentPageNumber={pageNumber} 
+      />
+    </div>
   );
 }
 

@@ -1,15 +1,15 @@
 import React from 'react';
 import Issue from './Issue';
 
-const Page = ({pageData}) => {
+const Page = ({pageData, sortOrder}) => {
   return (
     <>
-    <h2>Showing {pageData.length} results</h2>
-    <ol>
+    <h3>Showing <u>{pageData.length}</u> results</h3>
+    <ul>
       {pageData.map(issue => {
-        return <Issue key={issue.id} issue={issue} />
+        return <Issue key={issue.id} issue={issue} sortOrder={sortOrder} />
       })}
-    </ol>
+    </ul>
     </>
   )
 }
