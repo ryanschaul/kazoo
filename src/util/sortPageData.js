@@ -10,17 +10,17 @@ const sortPageData = (sortOrder, pageData) => {
   } else if (sortOrder === "Date Created") {
     pageData.sort((a, b) => {
       if (a.created_at < b.created_at) {
-        return -1;
-      } else {
         return 1;
+      } else {
+        return -1;
       }
     })
   } else if (sortOrder === "Last Updated") {
     pageData.sort((a, b) => {
       if (a.updated_at < b.updated_at) {
-        return -1;
-      } else {
         return 1;
+      } else {
+        return -1;
       }
     })
   } else if (sortOrder === "Comment Count") {

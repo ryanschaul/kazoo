@@ -253,9 +253,10 @@ h1 {
   text-align: center;
 }
 
-h3 {
+h2 {
   color: var(--color-text);
   text-align: center;
+  margin-top: 24px;
 }
 
 ul {
@@ -308,6 +309,7 @@ button {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .select-wrapper {
@@ -317,7 +319,7 @@ button {
 .select-wrapper::after {
   content: "▼";
   font-size: .7rem;
-  top: 35px;
+  top: 20px;
   right: 18px;
   position: absolute;
   color: var(--color-text-light);
@@ -325,7 +327,7 @@ button {
 
 select {
   width: 220px;
-  margin: 20px 10px 20px 10px;
+  margin: 5px 10px 0px 10px;
   height: 44px;
   border-radius: 6px;
   border: 1px solid var(--color-accent);
@@ -335,6 +337,7 @@ select {
   line-height: 100%;
   padding: 12px;
   appearance: none;
+  cursor: pointer;
 }
 
 .issue-header {
@@ -351,6 +354,17 @@ select {
 .issue-main {
   text-align: center;
   width: 75%;
+  padding: 10px;
+  overflow-wrap: break-word;
+}
+
+.issue-description {
+  text-align: left;
+}
+
+pre {
+  overflow: scroll;
+  background-color: #fffafa;
 }
 
 .issue-attributes {
@@ -393,4 +407,31 @@ p {
   /* border-radius: 6px; */
   padding: 2px;
   background-color: #FFFFE0;
+}
+
+.select-label {
+  font-family: var(--font-heading);
+  color: var(--color-text-light);
+  font-weight: var(--fontWeight-normal);
+  font-size: var(--fontSize-0);
+  text-align: center;
+  margin-bottom: 0;
+}
+
+@media (max-width: 50rem) {
+  .issue-header {
+    display: block;
+  }
+
+  .issue-attributes {
+    width: 100%
+  }
+
+  .issue-main {
+    width: 100%;
+  }
+
+  .select-label {
+    margin-bottom: 10px;
+  }
 }

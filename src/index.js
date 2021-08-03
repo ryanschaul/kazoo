@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const axe = require('@axe-core/react');
+axe(React, ReactDOM, 1000);
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

@@ -28,17 +28,16 @@ const Issue = ({ issue, sortOrder }) => {
 
         <div className='issue-main'>
           <div className={`issue-title ${sortOrder === 'Title' ? 'sort-highlight': ''}`}>
-            <a href={issue.url}>{issue.title}</a>
+            <a href={issue.html_url} target='_blank' rel="noreferrer">{issue.title}</a>
           </div>
 
           <button 
             onClick={showDescriptionHandler}
             className='description-button'>{showDescription ? 'Hide Description' : 'Show Description'}
           </button>
-          
-          {showDescription && <ReactMarkdown>{issue.body}</ReactMarkdown>}
+        
+          {showDescription && <ReactMarkdown className='issue-description'>{issue.body}</ReactMarkdown>}
         </div>
-
       </div>
     </li>
   )
