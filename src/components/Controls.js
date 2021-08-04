@@ -16,10 +16,10 @@ const Controls = ({setSortOrder, setIssuesFilter}) => {
         </div>
       </label>
 
-      <label htmlFor='sort' className='select-label'>
+      <label htmlFor='filter' className='select-label'>
         Filter By Issues
         <div className='select-wrapper'>
-          <select onChange={(event) => {setIssuesFilter(event.target.value)}}>
+          <select id='filter' onChange={(event) => {setIssuesFilter(event.target.value)}}>
             <option>All Issues</option>
             <option>Issues With Labels</option>
           </select>
