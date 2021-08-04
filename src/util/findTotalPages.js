@@ -1,5 +1,7 @@
 const findTotalPages = (setTotalPages, result) => {
-  setTotalPages(result.headers.link.split(',')[1].split(/[=>]/)[1]);
+  const stringNum = result.headers.link.split(',')[1].split(/[=>]/)[1];
+  
+  setTotalPages(Number(stringNum));
 }
 
 export default findTotalPages

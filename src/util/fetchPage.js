@@ -18,7 +18,7 @@ const fetchPage = async (pageNumber) => {
   try {
     result = await axios.get(fetchUrl);
   } catch (error) {
-    console.log(error);
+    return error;
   }
 
   savedPages[pageNumber] = result;

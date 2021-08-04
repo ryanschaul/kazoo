@@ -16,12 +16,23 @@ const IssuesDashboard = () =>  {
   const [pageData, setPageData] = useState([]);
   const [sortOrder, setSortOrder] = useState('');
   const [issuesFilter, setIssuesFilter] = useState('All Issues');
+  const [fetchError, setFetchError] =  useState(false);
+
+  useEffect(() => {
+    fetchPage(1).then(result => {
+      findTotalPages(setTotalPages, result);
+    }).catch((error) => {
+      console.log(error);
+      setFetchError(true);
+    })
+  }, [totalPages]);
 
   useEffect(() => {
     fetchPage(pageNumber).then(result => {
       setPageData(result.data);
-
-      if (!totalPages) findTotalPages(setTotalPages, result);
+    }).catch((error) => {
+      console.log(error);
+      setFetchError(true);
     })
 
   }, [pageNumber, totalPages]);
@@ -40,10 +51,10 @@ const IssuesDashboard = () =>  {
         setSortOrder={setSortOrder} 
         setIssuesFilter={setIssuesFilter}
       />
-      <Page 
+      {fetchError ? <h2>Sorry, we could not retrieve the issues from GitHub :(.</h2> : <Page 
         pageData={issuesFilter === 'All Issues' ? pageData : pageData.filter(page => page.labels.length > 0)} 
         sortOrder={sortOrder}
-      />
+      />}
       <Pagination
         totalPages={totalPages} 
         setPageNumber={setPageNumber} 
