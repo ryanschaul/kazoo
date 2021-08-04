@@ -58,10 +58,10 @@
   --color-heading: #1a202c;
   --color-heading-black: black;
   --color-accent: #d1dce5;
-  --color-error: #c20011;
-  --color-error-light: #fffafa;
-  --color-success: #088413;
   --color-accent-light: #eef5fb;
+  --color-white: #fff;
+  --color-off-white: #fffafa;
+  --color-highlight: #FFFFE0;
 }
 
 /* HTML elements */
@@ -241,9 +241,8 @@ a:focus {
   text-decoration: underline;
 }
 
+/* Custom */
 
-
-/* custom */
 .wrapper {
   margin-bottom: 30px;
 }
@@ -283,7 +282,7 @@ button {
   padding: 13px 16px 16px 16px;
   height: 44px;
   background-color: var(--color-primary);
-  color: #fff;
+  color: var(--color-white);
 }
 
 .pagination-wrapper {
@@ -364,7 +363,7 @@ select {
 
 pre {
   overflow: scroll;
-  background-color: #fffafa;
+  background-color: var(--color-off-white);
 }
 
 .issue-attributes {
@@ -375,7 +374,6 @@ pre {
 
 p {
   margin: 0;
-  /* display: inline-block; */
 }
 
 .label {
@@ -396,17 +394,9 @@ p {
   flex-wrap: wrap;
 }
 
-.issue-title a {
-  display: inline-block;
-  width: 100%;
-  /* white-space: pre-wrap;
-  word-wrap: break-word; */
-}
-
 .sort-highlight {
-  /* border-radius: 6px; */
   padding: 2px;
-  background-color: #FFFFE0;
+  background-color: var(--color-highlight);
 }
 
 .select-label {

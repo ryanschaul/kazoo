@@ -20,7 +20,7 @@ const Issue = ({ issue, sortOrder }) => {
               {issue.labels.map(label => <Label key={label.id} label={label} />)}
             </ol>
           </div>
-          <p><strong>Author:</strong> {issue.user.login}</p> {/* they want author here. talk about in README */}
+          <p><strong>Author:</strong> {issue.user.login}</p>
           <p className={sortOrder === 'Comment Count' ? 'sort-highlight': ''}><strong>Comments:</strong> {issue.comments}</p>
           <p className={sortOrder === 'Date Created' ? 'sort-highlight': ''}><strong>Date Created:</strong> {new Date(issue.created_at).toDateString()}</p>
           <p className={sortOrder === 'Last Updated' ? 'sort-highlight': ''}><strong>Last Updated:</strong> {new Date(issue.updated_at).toDateString()}</p>
