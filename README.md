@@ -2,7 +2,7 @@
 
 I erred on the side of avoiding extra libraries that struck at the heart of the assignment. For example, I could have brought in react-bootstrap to make things look nicer, and to more quickly do so.
 
-I noted that the description allowed the user to filter by the attributes date_created and last_updated, however, the instructions did not call for visually rendering those attributes. In that situation, there is no way for the user to easily confirm what they are looking at. I decided to render those two additional attributes, which is technically against the instructions. In a real-world work-place scenario, I would have asked the question. Also in this regard, I put some background highlighting on the attribute currently being sorted by to help the user visual cue in on the change.
+I noted that the instructions called for allowing the user to filter by the attributes date_created and last_updated, however, the instructions did not call for visually rendering those attributes. In that situation, there is no way for the user to easily confirm what they are looking at. I decided to render those two additional attributes, which is technically against the instructions. In a real-world work-place scenario, I would have asked the question. Also in this regard, I put some background highlighting on the attribute currently being sorted by to help the user visual cue in on the change.
 
 It was not specified so I decided to sort items in descending order; comment count from largest to smallest and anything date-related from most recent to least. For title, alphabetical.
 
