@@ -19,7 +19,7 @@ const IssuesDashboard = () =>  {
   const [fetchError, setFetchError] =  useState(false);
 
   useEffect(() => {
-    fetchPage(1).then(result => {
+    fetchPage(1, setFetchError).then(result => {
       findTotalPages(setTotalPages, result);
     }).catch((error) => {
       console.log(error);
@@ -35,7 +35,7 @@ const IssuesDashboard = () =>  {
       setFetchError(true);
     })
 
-  }, [pageNumber, totalPages]);
+  }, [pageNumber]);
 
   sortPageData(sortOrder, pageData);
 

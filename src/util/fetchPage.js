@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const savedPages = {};
 
-const fetchPage = async (pageNumber) => {
+const fetchPage = async (pageNumber, setFetchError) => {
   const savedPageData = savedPages[pageNumber];
 
   if (savedPageData) {
@@ -18,7 +18,7 @@ const fetchPage = async (pageNumber) => {
   try {
     result = await axios.get(fetchUrl);
   } catch (error) {
-    return error;
+    throw error
   }
 
   savedPages[pageNumber] = result;
